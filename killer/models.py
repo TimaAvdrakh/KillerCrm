@@ -1,9 +1,15 @@
 from django.db import models
-from django.contrib.auth.models import AbstractBaseUser
+from django.contrib.auth.models import AbstractUser,AbstractBaseUser
 # Create your models here.
 
-class User(AbstractBaseUser):
-    email = models.EmailField(unique=True)
+class User(AbstractUser):
+    """User model."""
+
+    username = None
+    email = models.EmailField( unique=True)
+
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = []
 
 class Victim(models.Model):
     username = models.CharField(unique=True, max_length=20)

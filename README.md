@@ -13,3 +13,7 @@ pip install -r requirements
 #run 
 
 python manage.py runserver
+
+# Open /admin and login
+login: tima@gmail.com  
+pass: 123   
