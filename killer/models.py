@@ -1,8 +1,8 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import AbstractBaseUser
 # Create your models here.
 
-class User(User):
+class User(AbstractBaseUser):
     email = models.EmailField(unique=True)
 
 class Victim(models.Model):
@@ -17,7 +17,7 @@ class Victim(models.Model):
         self.username
 
 class Contract(models.Model):
-    user = models.ForeignKey(User)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     victims = models.ManyToManyField(Victim)
 
 

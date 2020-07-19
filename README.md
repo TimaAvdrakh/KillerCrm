@@ -10,5 +10,6 @@ source ./venv/bin/activate
 # Install requirements
 pip install -r requirements
 
-#run
-puthon manage.py runserver
+#run 
+
+python manage.py runserver
